@@ -1,7 +1,8 @@
 import  { useState, useEffect } from 'react';
 import axios from 'axios';
 import socket from '../socket';
-
+import UserList from '../components/UserList';
+import MessageList from '../components/MessageList';
 const ChatPage = ({ username }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState('');
@@ -76,10 +77,10 @@ const ChatPage = ({ username }) => {
 
  return (
     <div style={{ display: 'flex', padding: 20 }}>
-      <p>User List</p>
+      <UserList users={onlineUsers} currentUser={username} selectUser={selectUser} selectedUser={selectedUser}/>
       <div style={{ width: '70%', paddingLeft: 20 }}>
         <h3>Chat with {selectedUser || '...'}</h3>
-        <p>Messages of user</p>
+        <MessageList messages={messages} currentUser={username} typingStatus={typingStatus} />
         <p>Chat Box</p>
       </div>
     </div>
