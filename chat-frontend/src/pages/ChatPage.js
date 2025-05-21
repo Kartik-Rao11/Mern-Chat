@@ -3,6 +3,7 @@ import axios from 'axios';
 import socket from '../socket';
 import UserList from '../components/UserList';
 import MessageList from '../components/MessageList';
+import ChatBox from '../components/ChatBox';
 const ChatPage = ({ username }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState('');
@@ -81,7 +82,14 @@ const ChatPage = ({ username }) => {
       <div style={{ width: '70%', paddingLeft: 20 }}>
         <h3>Chat with {selectedUser || '...'}</h3>
         <MessageList messages={messages} currentUser={username} typingStatus={typingStatus} />
-        <p>Chat Box</p>
+        <ChatBox
+          selectedUser={selectedUser}
+          message={message}
+          setMessage={setMessage}
+          sendMessage={sendMessage}
+          handleTyping={handleTyping}
+          typingStatus={typingStatus}
+        />
       </div>
     </div>
   );
