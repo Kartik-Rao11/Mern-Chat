@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import ChatPage from './pages/ChatPage';
 function App() {
   const [username, setUsername] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,7 +19,7 @@ function App() {
     );
   }
 
-  return <p>Chat page</p>;
+  return <ChatPage username={username}/>;
 }
 
 export default App;
