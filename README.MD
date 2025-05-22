@@ -17,7 +17,7 @@ It allows users to:
 
 ## Demo
 
-- **Live Demo**: Click [here](https://website-generator-kr.vercel.app/) to view the live demo.
+- **Live Demo**: Click [here](https://mern-chat-jade.vercel.app/) to view the live demo.
 
 ## Installation
 
