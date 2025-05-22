@@ -55,7 +55,7 @@ const ChatPage = ({ username }) => {
 
   const selectUser = async (user) => {
     setSelectedUser(user);
-    const res = await axios.get(`http://localhost:5000/chat/${username}/${user}`);
+    const res = await axios.get(`https://mern-chat-production-7758.up.railway.app/${username}/${user}`);
     setMessages(res.data);
   };
 
