@@ -4,6 +4,7 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 const connectDB = require('./config/db');
 require('dotenv').config();
+const socketHandler = require('./socket');
 
 const app = express();
 const server = http.createServer(app);
@@ -22,6 +23,6 @@ connectDB();
 
 app.use(cors());
 app.use(express.json());
-
+socketHandler(io);
 
 server.listen(process.env.PORT, () => console.log(`Server running on : ${process.env.PORT}`));
