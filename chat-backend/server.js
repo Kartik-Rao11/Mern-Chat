@@ -1,0 +1,27 @@
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+const cors = require('cors');
+const connectDB = require('./config/db');
+require('dotenv').config();
+
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: process.env.FRONTEND_URL,
+    methods: ['GET', 'POST']
+  }
+});
+
+console.log(process.env.FRONTEND_URL);
+console.log(process.env.PORT);
+console.log(process.env.MONGO_URI);
+
+connectDB();
+
+app.use(cors());
+app.use(express.json());
+
+
+server.listen(process.env.PORT, () => console.log(`Server running on : ${process.env.PORT}`));

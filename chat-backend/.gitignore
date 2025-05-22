@@ -1,0 +1,43 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+*.out
+*.pid
+*.gz
+
+# Debugging
+.vscode/
+.idea/
+*.swp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# PM2 logs and dumps
+pids/
+*.pid
+*.seed
+*.log
+dump.rdb
+
+# Coverage (if using jest/nyc)
+coverage/
+
+# Build artifacts
+dist/
+build/
+
+# Socket.IO data (if any temp files are generated)
+tmp/
